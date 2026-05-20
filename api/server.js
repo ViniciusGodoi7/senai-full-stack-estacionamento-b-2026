@@ -1,13 +1,23 @@
+require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
+const cors = require("cors");
+
 const app = express();
-
-// const routes = require('./src/routes');
-
-app.use(cors());
 app.use(express.json());
-// app.use(routes);
+app.use(cors());
 
-app.listen(3001, () => {
-  console.log('API executando em http://localhost:3001');
+const estadiaRoutes = require('./src/routes/estadia.routes');
+
+app.use('/estadia', estadiaRoutes);
+
+
+const automovelRoutes = require('./src/routes/automovel.routes');
+
+app.use('/automovel', automovelRoutes);
+
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });

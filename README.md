@@ -44,5 +44,3 @@ O ESTACIONAMENTO ACME tem atuado em nossa cidade com ótimo atendimento e segura
 ## Tecnologias
 
 ## Passo a Passo de como executar e testar
-
-teste
